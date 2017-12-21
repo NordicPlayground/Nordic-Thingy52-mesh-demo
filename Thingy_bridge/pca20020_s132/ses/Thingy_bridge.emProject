@@ -1,0 +1,223 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="Thingy_bridge_s132_pca20020" target="8" version="2">
+  <project Name="Thingy_bridge">
+    <configuration
+      Name="Common"
+      arm_architecture="v7EM"
+      arm_core_type="Cortex-M4"
+      arm_endian="Little"
+      arm_fp_abi="Hard"
+      arm_fpu_type="FPv4-SP-D16"
+      arm_simulator_memory_simulation_parameter="RX 00000000,00080000,FFFFFFFF;RWX 20000000,00010000,CDCDCDCD"
+      arm_target_device_name="nRF52832_xxAA"
+      arm_target_interface_type="SWD"
+      debug_start_from_entry_point_symbol="No"
+      debug_target_connection="J-Link"
+      linker_section_placement_file="$(ProjectDir)/flash_placement.xml.txt"
+      linker_section_placement_macros="FLASH_PH_START=0x0;FLASH_PH_SIZE=0x80000;RAM_PH_START=0x20000000;RAM_PH_SIZE=0x10000;FLASH_START=0x1F000;FLASH_SIZE=0x56000;RAM_START=0x20002b18;RAM_SIZE=0xd4e8"
+      linker_section_placements_segments="FLASH RX 0x00000000 0x00080000;SRAM RWX 0x20000000 0x00010000"
+      project_directory=""
+      project_type="Executable" />
+    <folder Name="Internal Files">
+      <file file_name="../../../sdk_components/toolchain/system_nrf52.c" />
+      <file file_name="ses_nrf52_startup.s" />
+      <file file_name="thumb_crt0.s" />
+    </folder>
+    <configuration
+      Name="release_v1_0_0"
+      c_preprocessor_definitions="NRF52;NRF52_SERIES;NRF52832;NRF52832_XXAA;BLE_STACK_SUPPORT_REQD;__HEAP_SIZE=0;S132;SD_BLE_API_VERSION=4;NRF_SD_BLE_API_VERSION=4;NRF52_PAN_12;NRF52_PAN_15;NRF52_PAN_20;NRF52_PAN_30;NRF52_PAN_31;NRF52_PAN_36;NRF52_PAN_51;NRF52_PAN_53;NRF52_PAN_54;NRF52_PAN_55;NRF52_PAN_58;NRF52_PAN_62;NRF52_PAN_63;NRF52_PAN_64;SOFTDEVICE_PRESENT;SWI_DISABLE0;BSP_DEFINES_ONLY;ARM_MATH_CM4;MPU9250;EMPL;USE_DMP;EMPL_TARGET_NRF52;NRF_LOG_USES_RTT=1;BLE_DFU_APP_SUPPORT;NRF_DFU_SETTINGS_VERSION=1;AUDIO_EQ_DEF=3;HAL_NFC_ENGINEERING_BC_FTPAN_WORKAROUND;DEBUG;NRF_LOG_ENABLED=1"
+      c_user_include_directories="$(PackagesDir)/CMSIS_4/CMSIS/Include;../config;sdk_mod;../../../mesh_sdk/models/simple_thingy/include;../../../external/sdk13_override;../../../external/segger_rtt;../../../include/ble_services;../../../include/board;../../../include/drivers;../../../include/macros;../../../include/modules;../../../include/util;../../../mesh_sdk/models/config/include;../../../mesh_sdk/models/health/include;../../../mesh_sdk/mesh/core/api;../../../mesh_sdk/mesh/core/include;../../../mesh_sdk/mesh/dfu/api;../../../mesh_sdk/mesh/dfu/include;../../../mesh_sdk/mesh/prov/api;../../../mesh_sdk/mesh/prov/include;../../../mesh_sdk/mesh/bearer/api;../../../mesh_sdk/mesh/bearer/include;../../../mesh_sdk/mesh/access/api;../../../mesh_sdk/mesh/access/include;../../../mesh_sdk/external/micro-ecc;../../../sdk_components/ble/nrf_ble_gatt;../../../sdk_components/ble/ble_advertising;../../../sdk_components/ble/ble_services/ble_bas;../../../sdk_components/ble/ble_services/ble_dfu;../../../sdk_components/ble/common;../../../sdk_components/drivers_nrf/clock;../../../sdk_components/drivers_nrf/common;../../../sdk_components/drivers_nrf/config;../../../sdk_components/drivers_nrf/delay;../../../sdk_components/drivers_nrf/gpiote;../../../sdk_components/drivers_nrf/hal;../../../sdk_components/drivers_nrf/saadc;../../../sdk_components/drivers_nrf/twi_master;../../../sdk_components/drivers_nrf/uart;../../../sdk_components/libraries/bootloader/dfu;../../../sdk_components/libraries/button;../../../sdk_components/libraries/crc32;../../../sdk_components/libraries/experimental_section_vars;../../../sdk_components/libraries/fds;../../../sdk_components/libraries/fifo;../../../sdk_components/libraries/fstorage;../../../sdk_components/libraries/led_softblink;../../../sdk_components/libraries/log;../../../sdk_components/libraries/log/src;../../../sdk_components/libraries/low_power_pwm;../../../sdk_components/libraries/queue;../../../sdk_components/libraries/scheduler;../../../sdk_components/libraries/strerror/;../../../sdk_components/libraries/timer;../../../sdk_components/libraries/trace;../../../sdk_components/libraries/uart;../../../sdk_components/libraries/util;../../../sdk_components/softdevice/common/softdevice_handler;../../../sdk_components/softdevice/s132/headers;../../../sdk_components/softdevice/s132/headers/nrf52;../../../sdk_components/toolchain;../../../sdk_components/device"
+      debug_additional_load_file="$(ProjectDir)/../../../sdk_components/softdevice/s132/hex/s132_nrf52_4.0.2_softdevice.hex"
+      linker_output_format="hex"
+      linker_printf_fmt_level="long"
+      linker_printf_width_precision_supported="Yes"
+      linker_section_placement_file="$(ProjectDir)/flash_placement.xml.txt" />
+    <folder Name="Thingy">
+      <file file_name="../main.c" />
+      <file file_name="../../../source/util/advertiser_beacon_timeslot.c" />
+      <file file_name="../../../source/util/twi_manager.c" />
+      <file file_name="../config/sdk_config.h" />
+      <file file_name="../../../include/board/pca20020.h" />
+      <file file_name="../../../source/util/support_func.c" />
+      <file file_name="../config/thingy_config.h" />
+      <file file_name="sdk_mod/m_ble.c" />
+      <file file_name="sdk_mod/provisioner.c" />
+      <file file_name="sdk_mod/m_nus.c" />
+    </folder>
+    <folder Name="Thingy drivers">
+      <file file_name="../../../source/drivers/drv_ext_light.c" />
+      <file file_name="../../../source/drivers/drv_ccs811.c" />
+      <file file_name="../../../source/drivers/drv_gas_sensor.c" />
+      <file file_name="../../../source/drivers/drv_bh1745.c" />
+      <file file_name="../../../source/drivers/drv_color.c" />
+      <file file_name="../../../source/drivers/drv_pressure.c" />
+      <file file_name="../../../source/drivers/drv_lps22hb.c" />
+      <file file_name="../../../source/drivers/drv_sx1509.c" />
+      <file file_name="../../../source/drivers/drv_hts221.c" />
+      <file file_name="../../../source/drivers/drv_humidity.c" />
+      <file file_name="../../../source/drivers/drv_ext_gpio.c" />
+      <file file_name="sdk_mod/sx150x_led_drv_calc.c" />
+    </folder>
+    <folder Name="Thingy_libraries" />
+    <folder Name="nRF_BLE">
+      <file file_name="../../../sdk_components/ble/common/ble_advdata.c" />
+      <file file_name="../../../sdk_components/ble/ble_advertising/ble_advertising.c" />
+      <file file_name="../../../sdk_components/ble/common/ble_conn_params.c" />
+      <file file_name="../../../sdk_components/ble/common/ble_conn_state.c" />
+      <file file_name="../../../sdk_components/ble/common/ble_srv_common.c" />
+      <file file_name="../../../source/ble_services/ble_uis.c" />
+      <file file_name="sdk_mod/ble_nus.c" />
+    </folder>
+    <folder Name="nRF_Drivers">
+      <file file_name="../../../sdk_components/drivers_nrf/common/nrf_drv_common.c" />
+      <file file_name="../../../sdk_components/drivers_nrf/gpiote/nrf_drv_gpiote.c" />
+      <file file_name="../../../sdk_components/drivers_nrf/twi_master/nrf_drv_twi.c" />
+      <file file_name="../../../sdk_components/drivers_nrf/clock/nrf_drv_clock.c" />
+      <file file_name="../../../sdk_components/drivers_nrf/saadc/nrf_drv_saadc.c" />
+      <file file_name="../../../sdk_components/drivers_nrf/hal/nrf_saadc.c" />
+      <file file_name="../../../sdk_components/drivers_nrf/hal/nrf_nvmc.c" />
+    </folder>
+    <folder Name="nRF_Libraries">
+      <file file_name="../../../sdk_components/libraries/queue/nrf_queue.c" />
+      <file file_name="../../../sdk_components/libraries/button/app_button.c" />
+      <file file_name="../../../sdk_components/libraries/util/app_error.c" />
+      <file file_name="../../../sdk_components/libraries/scheduler/app_scheduler.c" />
+      <file file_name="../../../sdk_components/libraries/timer/app_timer.c" />
+      <file file_name="../../../sdk_components/libraries/util/nrf_assert.c" />
+      <file file_name="../../../sdk_components/libraries/uart/retarget.c" />
+      <file file_name="../../../sdk_components/libraries/led_softblink/led_softblink.c" />
+      <file file_name="../../../sdk_components/libraries/low_power_pwm/low_power_pwm.c" />
+      <file file_name="../../../sdk_components/libraries/fstorage/fstorage.c" />
+      <file file_name="../../../sdk_components/libraries/util/app_util_platform.c" />
+      <file file_name="../../../sdk_components/libraries/fds/fds.c" />
+      <file file_name="../../../sdk_components/libraries/util/sdk_mapped_flags.c" />
+      <file file_name="../../../sdk_components/libraries/crc32/crc32.c" />
+      <file file_name="../../../sdk_components/ble/ble_services/ble_dfu/ble_dfu.c" />
+    </folder>
+    <folder Name="nRF_SoftDevice">
+      <file file_name="../../../external/sdk13/components/softdevice/s132/doc/s132_nrf52_4.0.2_licence-agreement.txt" />
+      <file file_name="../../../external/sdk13_override/softdevice_handler_appsh.c" />
+      <file file_name="sdk_mod/softdevice_handler.c" />
+    </folder>
+    <folder Name="nRF_Log">
+      <file file_name="../../../sdk_components/libraries/log/src/nrf_log_frontend.c" />
+      <file file_name="../../../sdk_components/libraries/log/src/nrf_log_backend_serial.c" />
+      <file file_name="../../../sdk_components/libraries/strerror/nrf_strerror.c" />
+    </folder>
+    <folder Name="nRF_Segger_RTT">
+      <file file_name="../../../external/segger_rtt/SEGGER_RTT.c" />
+      <file file_name="../../../external/segger_rtt/SEGGER_RTT_printf.c" />
+      <file file_name="sdk_mod/SEGGER_RTT_Syscalls_SES.c" />
+    </folder>
+    <folder Name="Mesh_Core">
+      <file file_name="../../../mesh_sdk/mesh/core/src/aes.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/aes_cmac.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/beacon.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/bearer_event.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/cache.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/ccm_soft.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/core_tx.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/enc.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/event.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/fifo.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/flash_manager.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/flash_manager_defrag.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/flash_manager_internal.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/hal.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/internal_event.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/log.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/mesh_flash.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/msg_cache.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/msqueue.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/net_beacon.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/net_state.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/network.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/nrf_flash.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/nrf_mesh.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/nrf_mesh_configure.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/nrf_mesh_keygen.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/nrf_mesh_opt.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/nrf_mesh_utils.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/packet_buffer.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/packet_mgr.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/queue.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/rand.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/replay_cache.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/ticker.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/timer.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/timer_scheduler.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/timeslot.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/toolchain.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/transport.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/uri.c" />
+    </folder>
+    <folder Name="Mesh_bearer">
+      <file file_name="../../../mesh_sdk/mesh/bearer/src/ad_type_filter.c" />
+      <file file_name="../../../mesh_sdk/mesh/bearer/src/adv_packet_filter.c" />
+      <file file_name="../../../mesh_sdk/mesh/bearer/src/advertiser.c" />
+      <file file_name="../../../mesh_sdk/mesh/bearer/src/bearer_handler.c" />
+      <file file_name="../../../mesh_sdk/mesh/bearer/src/broadcast.c" />
+      <file file_name="../../../mesh_sdk/mesh/bearer/src/filter_engine.c" />
+      <file file_name="../../../mesh_sdk/mesh/bearer/src/gap_address_filter.c" />
+      <file file_name="../../../mesh_sdk/mesh/bearer/src/radio_config.c" />
+      <file file_name="../../../mesh_sdk/mesh/bearer/src/rssi_filter.c" />
+      <file file_name="../../../mesh_sdk/mesh/bearer/src/scanner.c" />
+    </folder>
+    <folder Name="Mesh_Access">
+      <file file_name="../../../mesh_sdk/mesh/access/src/access.c" />
+      <file file_name="../../../mesh_sdk/mesh/access/src/access_publish.c" />
+      <file file_name="../../../mesh_sdk/mesh/access/src/access_reliable.c" />
+      <file file_name="../../../mesh_sdk/mesh/access/src/device_state_manager.c" />
+    </folder>
+    <folder Name="Mesh_ConfigModel">
+      <file file_name="../../../mesh_sdk/models/config/src/composition_data.c" />
+      <file file_name="../../../mesh_sdk/models/config/src/config_client.c" />
+      <file file_name="../../../mesh_sdk/models/config/src/config_server.c" />
+      <file file_name="../../../mesh_sdk/models/config/src/packed_index_list.c" />
+    </folder>
+    <folder Name="Mesh_HealthModel">
+      <file file_name="../../../mesh_sdk/models/health/src/health_client.c" />
+    </folder>
+    <folder Name="Mesh_Provisioning">
+      <file file_name="../../../mesh_sdk/mesh/prov/src/nrf_mesh_prov.c" />
+      <file file_name="../../../mesh_sdk/mesh/prov/src/prov_beacon.c" />
+      <file file_name="../../../mesh_sdk/mesh/prov/src/prov_bearer_adv.c" />
+      <file file_name="../../../mesh_sdk/mesh/prov/src/prov_provisionee.c" />
+      <file file_name="../../../mesh_sdk/mesh/prov/src/prov_provisioner.c" />
+      <file file_name="../../../mesh_sdk/mesh/prov/src/prov_utils.c" />
+      <file file_name="../../../mesh_sdk/mesh/prov/src/provisioning.c" />
+    </folder>
+    <folder Name="uECC">
+      <file file_name="../../../mesh_sdk/external/micro-ecc/uECC.c">
+        <configuration
+          Name="debug_v1_0_0"
+          c_preprocessor_definitions="uECC_OPTIMIZATION_LEVEL=2;uECC_SUPPORTS_secp160r1=0;uECC_SUPPORTS_secp192r1=0;uECC_SUPPORTS_secp224r1=0;uECC_SUPPORTS_secp256r1=1;uECC_SUPPORTS_secp256k1=0;uECC_SUPPORT_COMPRESSED_POINT=0" />
+      </file>
+    </folder>
+    <folder Name="Mesh_Example">
+      <file file_name="../../../mesh_sdk/examples/nrf_mesh_weak.c" />
+      <file file_name="sdk_mod/nrf_mesh_sdk.c" />
+    </folder>
+    <folder Name="Mesh_simple_thingy">
+      <file file_name="../../../mesh_sdk/models/simple_thingy/src/simple_thingy_client.c" />
+    </folder>
+    <folder Name="SDK_mod">
+      <file file_name="sdk_mod/m_ui_demo.c" />
+    </folder>
+    <folder Name="::CMSIS" />
+    <folder Name="::Device" />
+    <configuration
+      Name="debug_v1_0_0"
+      c_preprocessor_definitions="NRF52;NRF52_SERIES;NRF52832;NRF52832_XXAA;BLE_STACK_SUPPORT_REQD;__HEAP_SIZE=0;S132;SD_BLE_API_VERSION=4;NRF_SD_BLE_API_VERSION=4;NRF52_PAN_12;NRF52_PAN_15;NRF52_PAN_20;NRF52_PAN_30;NRF52_PAN_31;NRF52_PAN_36;NRF52_PAN_51;NRF52_PAN_53;NRF52_PAN_54;NRF52_PAN_55;NRF52_PAN_58;NRF52_PAN_62;NRF52_PAN_63;NRF52_PAN_64;SOFTDEVICE_PRESENT;SWI_DISABLE0;BSP_DEFINES_ONLY;ARM_MATH_CM4;MPU9250;EMPL;USE_DMP;EMPL_TARGET_NRF52;NRF_LOG_USES_RTT=1;BLE_DFU_APP_SUPPORT;NRF_DFU_SETTINGS_VERSION=1;AUDIO_EQ_DEF=3;HAL_NFC_ENGINEERING_BC_FTPAN_WORKAROUND;DEBUG;NRF_LOG_ENABLED=1"
+      c_user_include_directories="$(PackagesDir)/CMSIS_4/CMSIS/Include;../config;sdk_mod;../../../mesh_sdk/models/simple_thingy/include;../../../external/sdk13_override;../../../external/segger_rtt;../../../include/ble_services;../../../include/board;../../../include/drivers;../../../include/macros;../../../include/modules;../../../include/util;../../../mesh_sdk/models/config/include;../../../mesh_sdk/models/health/include;../../../mesh_sdk/mesh/core/api;../../../mesh_sdk/mesh/core/include;../../../mesh_sdk/mesh/dfu/api;../../../mesh_sdk/mesh/dfu/include;../../../mesh_sdk/mesh/prov/api;../../../mesh_sdk/mesh/prov/include;../../../mesh_sdk/mesh/bearer/api;../../../mesh_sdk/mesh/bearer/include;../../../mesh_sdk/mesh/access/api;../../../mesh_sdk/mesh/access/include;../../../mesh_sdk/external/micro-ecc;../../../sdk_components/ble/nrf_ble_gatt;../../../sdk_components/ble/ble_advertising;../../../sdk_components/ble/ble_services/ble_bas;../../../sdk_components/ble/ble_services/ble_dfu;../../../sdk_components/ble/common;../../../sdk_components/drivers_nrf/clock;../../../sdk_components/drivers_nrf/common;../../../sdk_components/drivers_nrf/config;../../../sdk_components/drivers_nrf/delay;../../../sdk_components/drivers_nrf/gpiote;../../../sdk_components/drivers_nrf/hal;../../../sdk_components/drivers_nrf/saadc;../../../sdk_components/drivers_nrf/twi_master;../../../sdk_components/drivers_nrf/uart;../../../sdk_components/libraries/bootloader/dfu;../../../sdk_components/libraries/button;../../../sdk_components/libraries/crc32;../../../sdk_components/libraries/experimental_section_vars;../../../sdk_components/libraries/fds;../../../sdk_components/libraries/fifo;../../../sdk_components/libraries/fstorage;../../../sdk_components/libraries/led_softblink;../../../sdk_components/libraries/log;../../../sdk_components/libraries/log/src;../../../sdk_components/libraries/low_power_pwm;../../../sdk_components/libraries/queue;../../../sdk_components/libraries/scheduler;../../../sdk_components/libraries/strerror/;../../../sdk_components/libraries/timer;../../../sdk_components/libraries/trace;../../../sdk_components/libraries/uart;../../../sdk_components/libraries/util;../../../sdk_components/softdevice/common/softdevice_handler;../../../sdk_components/softdevice/s132/headers;../../../sdk_components/softdevice/s132/headers/nrf52;../../../sdk_components/toolchain;../../../sdk_components/device"
+      debug_additional_load_file="$(ProjectDir)/../../../sdk_components/softdevice/s132/hex/s132_nrf52_4.0.2_softdevice.hex"
+      linker_output_format="hex"
+      linker_printf_fmt_level="long"
+      linker_printf_width_precision_supported="Yes"
+      linker_section_placement_file="$(ProjectDir)/flash_placement.xml.txt" />
+    <configuration Name="External Keil" c_additional_options="--c99" />
+  </project>
+  <configuration Name="Internal" hidden="Yes" />
+  <configuration Name="release_v1_0_0" inherited_configurations="Internal" />
+  <configuration Name="debug_v1_0_0" inherited_configurations="Internal" />
+</solution>
