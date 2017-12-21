@@ -76,7 +76,9 @@ To turn off this feature, please send:
 | ID MSB | ID LSB | Service | Parameter |
 | ------ | ------ | ------  | --------- |
 | 0x00   | 0x00   | 0x01    | 0x01      |
+
 To turn on this feature, please send 
+
 | Node ID MSB | Node ID LSB | Service | Parameter |
 | ------ | ------ | ------ | ------ |
 | 0x00   | 0x00   | 0x01   | 0x00   |
@@ -110,8 +112,8 @@ Once if the provisioning and configuration successed, the response packets will 
 | Dev. No. MSB | Dev. No. LSB | Service | Parameter           |
 | ------------ | ------------ | ------- | ------------------- |
 | 0x00         | 0x01         | 0x07    | 0x00 0x00 0x00 0x00 |
-The Dev. No. will be the index of the nodes.
 
+The Dev. No. will be the index of the nodes.
 
 If the provisioning and configuration failed, the response packets will be:
 
