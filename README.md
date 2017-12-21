@@ -8,6 +8,9 @@ User can use APP on mobile phone like nRFMesh or nRFConnect to connect with brid
 In the Thingy mesh demo, a experimental simple Thingy model is introduced. Which provides the LED control and also the humidity/temperature sensor information feedback function.
 
 
+![demo overview](https://github.com/NordicSemiconductor/Nordic-Thingy52-mesh-demo/blob/master/pics/demo_pic.jpg)
+
+
 ### Requirements
 - Nordic nRF5x-DK or Segger J-Link debugger
 - 2x5 1.27mm SWD wire
@@ -22,7 +25,7 @@ In the Thingy mesh demo, a experimental simple Thingy model is introduced. Which
 To run the demo, you can use the precompiled firmware, so use Segger Embedded Studio to compile the firmware by self.
 
 To compile the demo firmware and run the demo, please follow the steps:
-1. Download and extract the Nordic Thingy:52 SDK and extract it.
+1. Download and extract the Nordic Thingy:52 SDK and extract it, run the setup_sdk.bat.
 2. Download Nordic nRF5 SDK for Mesh v0.10. and etract it under Thingy:52 SDK, rename the directory from "nrf5_SDK_for_Mesh_v0.10.1-Alpha_src" to "mesh_sdk".
 3. Download and place the Thingy_node, Thingy_bridge under Thingy:52 SDK, and place simple_thingy under mesh_sdk/models/ 
 4. Open Segger Embedded Studio, and install the "nRF CPU Support Package". You can check it by click the main tool bar "Tools" -> "Package Manager", and search "nRF CPU Support Package".
@@ -31,8 +34,16 @@ To compile the demo firmware and run the demo, please follow the steps:
 7. When the Thingy bridge is turned on, it will blink in red breath light, and start to do provisioning to the nearby unprovisoned Thingy nodes automatically. You can disable the auto-provisioning function by undefine the macro "AUTO_PROV" in the code, or check the detail of the protocol to send a command to turn it off.
 7. When the unprovisioned Thingy node is turned on, it will blink in green breathe light, after it be provisioned, it will turn to constant light blue.
 8. For using nRFMesh APP to run the demo, please add node 0x0000 ~ 0x0009 in the list, and you can control the specific node or all the nodes in the mesh network.
-9. If you don't have nRFMesh APP, you can use nRFConnect to send the commmand packets to run the demo, please check the "protocol section" for more information.
-10. To erase the provisioning information stored in the bridge or nodes, please turn off the Thingy and press the button on the top of the Thingy when turn on the power.
+9. The button on the bridge can toggle the LED on every nodes 
+10. If you don't have nRFMesh APP, you can use nRFConnect to send the commmand packets to run the demo, please check the "protocol section" for more information.
+11. To erase the provisioning information stored in the bridge or nodes, please turn off the Thingy and press the button on the top of the Thingy when turn on the power.
+
+### Known issues
+This is a draft version of the demo example, there are some issue waiting for fixed:
+ - once if the configuration failed, there's no way to recover, both of the bridge and nodes need to erase the provisioning information and restart again
+ - now the health status send from the bridge to the mobile device may lead nRFMesh APP crash, so send back health status is disable in current version
+ - The protocol design is not very systematic, will need to redesign
+
 
 ### Protocol Description
 #### Communication protocol
