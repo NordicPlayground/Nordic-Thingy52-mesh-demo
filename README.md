@@ -8,7 +8,7 @@ User can use APP on mobile phone like nRFMesh or nRFConnect to connect with brid
 In the Thingy mesh demo, a experimental simple Thingy model is introduced. Which provides the LED control and also the humidity/temperature sensor information feedback function.
 
 
-![demo overview](https://github.com/NordicSemiconductor/Nordic-Thingy52-mesh-demo/blob/master/pics/demo_pic.jpg)
+![demo overview](https://github.com/NordicPlayground/Nordic-Thingy52-mesh-demo/blob/master/pics/demo_pic.jpg)
 
 
 ### Requirements
