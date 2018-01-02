@@ -17,8 +17,8 @@ In the Thingy mesh demo, a experimental simple Thingy model is introduced. Which
 - Nordic Thingy:52 (more than two would be great)
 - Nordic Thingy:52 SDK v2.1.0
     - [https://github.com/NordicSemiconductor/Nordic-Thingy52-FW](https://github.com/NordicSemiconductor/Nordic-Thingy52-FW "Github link")
-- Nordic nRF5 SDK for Mesh v0.10.1
-    - [https://www.nordicsemi.com/eng/nordic/Products/nRF5-SDK-for-Mesh/nRF5-SDK-for-Mesh/62377](https://www.nordicsemi.com/eng/nordic/Products/nRF5-SDK-for-Mesh/nRF5-SDK-for-Mesh/62377)
+- Nordic nRF5 SDK for Mesh v1.0
+    - [https://www.nordicsemi.com/eng/nordic/Products/nRF5-SDK-for-Mesh](https://www.nordicsemi.com/eng/nordic/Products/nRF5-SDK-for-Mesh)
 - Segger Embedded Studio 
 
 ### Running the demo

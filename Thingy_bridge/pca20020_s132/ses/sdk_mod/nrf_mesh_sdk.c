@@ -164,6 +164,7 @@ void mesh_core_setup(void)
     nrf_mesh_init_params_t mesh_init_params = {
         .lfclksrc = lfc_cfg,
         .assertion_handler = mesh_assert_handler,
+        .irq_priority = NRF_MESH_IRQ_PRIORITY_LOWEST
     };
     ERROR_CHECK(nrf_mesh_init(&mesh_init_params));
 

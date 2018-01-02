@@ -150,6 +150,9 @@
       <file file_name="../../../mesh_sdk/mesh/core/src/toolchain.c" />
       <file file_name="../../../mesh_sdk/mesh/core/src/transport.c" />
       <file file_name="../../../mesh_sdk/mesh/core/src/uri.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/list.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/core_tx_adv.c" />
+      <file file_name="../../../mesh_sdk/mesh/core/src/heartbeat.c" />
     </folder>
     <folder Name="Mesh_bearer">
       <file file_name="../../../mesh_sdk/mesh/bearer/src/ad_type_filter.c" />
@@ -162,6 +165,7 @@
       <file file_name="../../../mesh_sdk/mesh/bearer/src/radio_config.c" />
       <file file_name="../../../mesh_sdk/mesh/bearer/src/rssi_filter.c" />
       <file file_name="../../../mesh_sdk/mesh/bearer/src/scanner.c" />
+      <file file_name="../../../mesh_sdk/mesh/bearer/src/ad_listener.c" />
     </folder>
     <folder Name="Mesh_Access">
       <file file_name="../../../mesh_sdk/mesh/access/src/access.c" />
@@ -170,7 +174,6 @@
       <file file_name="../../../mesh_sdk/mesh/access/src/device_state_manager.c" />
     </folder>
     <folder Name="Mesh_ConfigModel">
-      <file file_name="../../../mesh_sdk/models/config/src/composition_data.c" />
       <file file_name="../../../mesh_sdk/models/config/src/config_client.c" />
       <file file_name="../../../mesh_sdk/models/config/src/config_server.c" />
       <file file_name="../../../mesh_sdk/models/config/src/packed_index_list.c" />

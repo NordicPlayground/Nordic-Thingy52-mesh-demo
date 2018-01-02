@@ -177,7 +177,7 @@ static void thingy_init(void)
     m_ble_init_t             ble_params;
 
     /**@brief Initialize the TWI manager. */
-    err_code = twi_manager_init(APP_IRQ_PRIORITY_THREAD);
+    err_code = twi_manager_init(APP_IRQ_PRIORITY_LOWEST);
     APP_ERROR_CHECK(err_code);
 
     /**@brief Initialize LED and button UI module. */
@@ -318,6 +318,7 @@ void mesh_stack_init(void)
     config_params.p_static_data = static_auth_data;
     config_params.complete_callback = configuration_complete;
     config_params.setup_callback = configuration_setup;
+    config_params.irq_priority = NRF_MESH_IRQ_PRIORITY_LOWEST;
     config_params.lf_clk_cfg.source = NRF_CLOCK_LF_SRC_XTAL;
     config_params.lf_clk_cfg.xtal_accuracy = NRF_CLOCK_LF_XTAL_ACCURACY_20_PPM;
     nrf_mesh_node_config(&config_params);
@@ -395,7 +396,7 @@ int main(void)
     for (;;)
     {
         app_sched_execute();
-        nrf_mesh_process();
+
         
         if (!NRF_LOG_PROCESS()) // Process logs
         { 

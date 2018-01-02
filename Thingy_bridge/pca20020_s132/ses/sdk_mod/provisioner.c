@@ -45,6 +45,7 @@
 #include "nrf_mesh_assert.h"
 
 #include "nrf_mesh_prov.h"
+#include "nrf_mesh_prov_bearer_adv.h"
 #include "nrf_mesh_events.h"
 #include "device_state_manager.h"
 
@@ -93,8 +94,8 @@ typedef enum
 static uint8_t m_public_key[NRF_MESH_PROV_PUBKEY_SIZE];
 static uint8_t m_private_key[NRF_MESH_PROV_PRIVKEY_SIZE];
 
+static nrf_mesh_prov_bearer_adv_t m_prov_bearer_adv;
 static nrf_mesh_prov_ctx_t m_prov_ctx;
-static nrf_mesh_evt_handler_t m_evt_handler;
 
 static prov_state_t m_prov_state;
 static uint16_t m_target_address;
@@ -129,6 +130,7 @@ void nearby_dev_list_clean(void)
     cur_index = 0;
 }
 
+
 static void start_provisioning(const uint8_t * p_uuid)
 {
     nrf_mesh_prov_provisioning_data_t prov_data =
@@ -140,10 +142,6 @@ static void start_provisioning(const uint8_t * p_uuid)
             .flags.iv_update = false,
             .flags.key_refresh = false
         };
-    nrf_mesh_prov_oob_caps_t capabilities = {0};
-    capabilities.algorithms = NRF_MESH_PROV_ALGORITHM_FIPS_P256EC;
-    capabilities.oob_static_types = NRF_MESH_PROV_OOB_STATIC_TYPE_SUPPORTED;
-    ERROR_CHECK(nrf_mesh_prov_init(&m_prov_ctx, m_public_key, m_private_key, &capabilities));
     ERROR_CHECK(nrf_mesh_prov_provision(&m_prov_ctx, p_uuid, &prov_data, NRF_MESH_PROV_BEARER_ADV));
     m_prov_state = PROV_STATE_PROV;
 }
@@ -310,29 +308,29 @@ uint8_t nearby_dev_buffer_push(uint8_t * beacon_info)
     }
 
 }
-static void mesh_evt_handler(nrf_mesh_evt_t * p_evt)
+static void prov_evt_handler(nrf_mesh_prov_evt_t * p_evt)
 {
     switch (p_evt->type)
     {
-        case NRF_MESH_EVT_UNPROVISIONED_RECEIVED:
+        case NRF_MESH_PROV_EVT_UNPROVISIONED_RECEIVED:
             if (m_prov_state == PROV_STATE_WAIT)
             {
                 //__LOG(LOG_SRC_APP, LOG_LEVEL_INFO, " m_check_nearby_dev = %d\r\n", m_check_nearby_dev);                
                 if(m_auto_provisioning == true)
                 {
-                    start_provisioning(p_evt->params.unprov_recv.device_uuid);
+                    start_provisioning(p_evt->params.unprov.device_uuid);
                     m_prov_state = PROV_STATE_PROV;
                 }
                 else if(m_auto_provisioning == false && m_check_nearby_dev == true)
                 {
                     //print nearby device
                     __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "scan.....\r\n");
-                    nearby_dev_buffer_push(p_evt->params.unprov_recv.device_uuid);
+                    nearby_dev_buffer_push(p_evt->params.unprov.device_uuid);
                 }
             }
             break;
 
-        case NRF_MESH_EVT_PROV_LINK_CLOSED:
+        case NRF_MESH_PROV_EVT_LINK_CLOSED:
             __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Local provisioning link closed\n");
             if (m_prov_state == PROV_STATE_PROV)
             {
@@ -345,14 +343,14 @@ static void mesh_evt_handler(nrf_mesh_evt_t * p_evt)
             }
             break;
 
-        case NRF_MESH_EVT_PROV_COMPLETE:
+        case NRF_MESH_PROV_EVT_COMPLETE:
             m_prov_state = PROV_STATE_IDLE;
-            provisioner_prov_complete_cb(&p_evt->params.prov_complete);
+            provisioner_prov_complete_cb(&p_evt->params.complete);
             break;
 
-        case NRF_MESH_EVT_PROV_CAPS_RECEIVED:
+        case NRF_MESH_PROV_EVT_CAPS_RECEIVED:
         {
-            uint32_t status = nrf_mesh_prov_oob_use(p_evt->params.prov_oob_caps_received.p_context,
+            uint32_t status = nrf_mesh_prov_oob_use(p_evt->params.oob_caps_received.p_context,
                                                     NRF_MESH_PROV_OOB_METHOD_STATIC,
                                                     NRF_MESH_KEY_SIZE);
             if (status != NRF_SUCCESS)
@@ -368,15 +366,15 @@ static void mesh_evt_handler(nrf_mesh_evt_t * p_evt)
             break;
         }
 
-        case NRF_MESH_EVT_PROV_STATIC_REQUEST:
+        case NRF_MESH_PROV_EVT_STATIC_REQUEST:
         {
             uint8_t static_data[16] = STATIC_AUTH_DATA;
-            ERROR_CHECK(nrf_mesh_prov_auth_data_provide(p_evt->params.prov_static_request.p_context, static_data, 16));
+            ERROR_CHECK(nrf_mesh_prov_auth_data_provide(p_evt->params.static_request.p_context, static_data, 16));
             __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Static authentication data provided\n");
             break;
         }
 
-        case NRF_MESH_EVT_PROV_LINK_ESTABLISHED:
+        case NRF_MESH_PROV_EVT_LINK_ESTABLISHED:
             __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Local provisioning link established\n");
             break;
 
@@ -390,7 +388,7 @@ void provisioner_configure(uint16_t address)
     m_target_address = address;
     if (m_prov_state == PROV_STATE_PROV)
     {
-        /* Wait for the NRF_MESH_EVT_PROV_LINK_CLOSED event. */
+        /* Wait for the NRF_MESH_PROV_EVT_LINK_CLOSED event. */
         m_prov_state = PROV_STATE_CONFIG_FIRST;
     }
     else
@@ -408,7 +406,6 @@ void provisioner_wait_for_unprov(uint16_t address)
 
 void config_client_event_cb(config_client_event_type_t event_type, const config_client_event_t * p_event, uint16_t length)
 {
-
     if (event_type == CONFIG_CLIENT_EVENT_TYPE_TIMEOUT)
     {
         provisioner_config_failed_cb();
@@ -479,9 +476,13 @@ void config_client_event_cb(config_client_event_type_t event_type, const config_
 void provisioner_init(void)
 {
     m_prov_state = PROV_STATE_IDLE;
-    ERROR_CHECK(nrf_mesh_prov_generate_keys(m_public_key, m_private_key));
+    nrf_mesh_prov_oob_caps_t capabilities = NRF_MESH_PROV_OOB_CAPS_DEFAULT(ACCESS_ELEMENT_COUNT);
 
-    m_evt_handler.evt_cb = mesh_evt_handler;
-    m_evt_handler.p_next = NULL;
-    nrf_mesh_evt_handler_add(&m_evt_handler);
+    ERROR_CHECK(nrf_mesh_prov_generate_keys(m_public_key, m_private_key));
+    ERROR_CHECK(nrf_mesh_prov_init(&m_prov_ctx, m_public_key, m_private_key, &capabilities, prov_evt_handler));
+    ERROR_CHECK(nrf_mesh_prov_bearer_add(&m_prov_ctx, nrf_mesh_prov_bearer_adv_interface_get(&m_prov_bearer_adv)));
+    ERROR_CHECK(nrf_mesh_prov_scan_start(prov_evt_handler));
 }
+
+
+

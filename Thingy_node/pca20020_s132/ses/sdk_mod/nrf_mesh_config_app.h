@@ -58,8 +58,8 @@
 /** Device product identifier*/
 #define DEVICE_PRODUCT_ID (0x0000)
 
-/** Device vendor identifier */
-#define DEVICE_VENDOR_ID (0x0000)
+/** Device version identifier */
+#define DEVICE_VERSION_ID (0x0000)
 
 /** Supported features of the device. @see config_feature_bit_t */
 #define DEVICE_FEATURES (CONFIG_FEATURE_RELAY_BIT)

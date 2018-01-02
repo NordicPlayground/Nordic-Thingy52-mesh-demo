@@ -38,7 +38,7 @@
 #ifndef PROVISIONER_H__
 #define PROVISIONER_H__
 
-#include "nrf_mesh_events.h"
+#include "nrf_mesh_prov_events.h"
 #include "config_client.h"
 
 #include "simple_thingy_example_common.h"
@@ -95,7 +95,7 @@ void config_client_event_cb(config_client_event_type_t event_type, const config_
  * Callback to user that the provisioning has completed.
  * @param[in] p_prov_data Pointer to provisioning data.
  */
-void provisioner_prov_complete_cb(const nrf_mesh_evt_prov_complete_t * p_prov_data);
+void provisioner_prov_complete_cb(const nrf_mesh_prov_evt_complete_t * p_prov_data);
 
 /** Callback to user that the configuration was successful. */
 void provisioner_config_successful_cb(void);

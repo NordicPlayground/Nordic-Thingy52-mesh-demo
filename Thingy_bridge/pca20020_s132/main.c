@@ -380,7 +380,7 @@ void provisioner_config_failed_cb(void)
     provisioner_wait_for_unprov(UNPROV_START_ADDRESS + m_provisioned_devices);
 }
 
-void provisioner_prov_complete_cb(const nrf_mesh_evt_prov_complete_t * p_prov_data)
+void provisioner_prov_complete_cb(const nrf_mesh_prov_evt_complete_t * p_prov_data)
 {
     /* We should not get here if all servers are provisioned. */
     NRF_MESH_ASSERT(m_configured_devices < SERVER_COUNT);
@@ -767,7 +767,7 @@ int main(void)
     for (;;)
     {
         app_sched_execute();
-        nrf_mesh_process();
+
         if (!NRF_LOG_PROCESS()) // Process logs
         { 
             power_manage();
