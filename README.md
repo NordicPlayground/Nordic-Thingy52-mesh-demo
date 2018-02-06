@@ -26,7 +26,7 @@ To run the demo, you can use the precompiled firmware, so use Segger Embedded St
 
 To compile the demo firmware and run the demo, please follow the steps:
 1. Download and extract the Nordic Thingy:52 SDK and extract it, run the setup_sdk.bat.
-2. Download Nordic nRF5 SDK for Mesh v0.10. and etract it under Thingy:52 SDK, rename the directory from "nrf5_SDK_for_Mesh_v1.0.0_src" to "mesh_sdk".
+2. Download Nordic nRF5 SDK for Mesh v1.0 and extract it under Thingy:52 SDK, rename the directory from "nrf5_SDK_for_Mesh_v1.0.0_src" to "mesh_sdk".
 3. Download and place the Thingy_node, Thingy_bridge under Thingy:52 SDK, and place simple_thingy under mesh_sdk/models/ 
 4. Open Segger Embedded Studio, and install the "nRF CPU Support Package". You can check it by click the main tool bar "Tools" -> "Package Manager", and search "nRF CPU Support Package".
 5. Open the workspace under "Thingy_node\pca20020_s132\ses", compile and download the firmware in to multiple Thingy devices which will play the role as "Nodes".
