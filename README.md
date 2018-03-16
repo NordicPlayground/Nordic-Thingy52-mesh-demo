@@ -161,11 +161,12 @@ The temperature is consisted with two parts, which using Celisus:
 The humidify shows in percentage, which is a uint8_t integer
 
 If the TX notification on the bridge got "0x00 0x02 0x06 0x19 0x11 0x1a", which means
+
 |ID MSB  | ID LSB | Service | Temperature MSB     | Temperature LSB     | Humidity     |
 | ------ | ------ | ------- | ---------           | -------             | ---------    |
 | 0x00   | 0x02   | 0x06    | 0x19                | 0x11                | 0x1a         |
 
-- this sensor feedback comes from the node address 0x0002    
+- this sensor feedback came from the node address 0x0002    
 - 0x19 is the integer part of temperature, it is 25 in this example 
 - 0x11 is the decimal part of temperature, which is 0.17 in this example
 -- So the temperature is 25.17 Celsius degree
