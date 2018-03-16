@@ -247,7 +247,10 @@ static void configuration_complete(void * p_unused)
     led_cmd.data.mode_const.g = 0x0f;
     led_cmd.data.mode_const.b = 0x0f;
     thingy_led_set(&m_server, led_cmd);
-    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Successfully provisioned\n");
+
+    dsm_local_unicast_address_t local_addresses;
+    dsm_local_unicast_addresses_get(&local_addresses);
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Successfully provisioned, current node address = 0x%04X\n", local_addresses.address_start);
 }
 
 static ble_uis_led_t led_get_cb()

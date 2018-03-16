@@ -52,7 +52,7 @@
  */
 
 /** Simple Thingy Server model ID. */
-#define SIMPLE_THINGY_SERVER_MODEL_ID (0x00)
+#define SIMPLE_THINGY_SERVER_MODEL_ID (0x0002)
 
 
 

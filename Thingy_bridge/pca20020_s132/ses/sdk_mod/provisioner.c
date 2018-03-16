@@ -116,7 +116,7 @@ void start_scan_nearby_dev(bool is_enable)
         m_check_nearby_dev = false;
         uint8_t i;
         for(i = 0; i < cur_index; i++){
-            __LOG_XB(LOG_SRC_APP, LOG_LEVEL_DEFAULT, "device:", nearby_dev_info[i], NRF_MESH_UUID_SIZE);
+            __LOG_XB(LOG_SRC_APP, LOG_LEVEL_DEFAULT, "Device:", nearby_dev_info[i], NRF_MESH_UUID_SIZE);
             nus_response_send(NUS_RSP_SCAN_RST, i, nearby_dev_info[i], NRF_MESH_UUID_SIZE);
         }
     }
@@ -149,20 +149,20 @@ static void start_provisioning(const uint8_t * p_uuid)
 void provisioning_with_item(uint8_t dev_no)
 {
     if(dev_no > cur_index){
-        __LOG(LOG_SRC_APP, LOG_LEVEL_DEFAULT, "error, out of list\n\r");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_DEFAULT, "Error, out of list\n\r");
     }
     else
     {
-        __LOG_XB(LOG_SRC_APP, LOG_LEVEL_DEFAULT, "going to do provisioning with ", nearby_dev_info[dev_no], NRF_MESH_UUID_SIZE);
+        __LOG_XB(LOG_SRC_APP, LOG_LEVEL_DEFAULT, "Going to do provisioning with ", nearby_dev_info[dev_no], NRF_MESH_UUID_SIZE);
         provisioning_with_uuid(nearby_dev_info[dev_no]);
         nearby_dev_list_clean();
-        __LOG(LOG_SRC_APP, LOG_LEVEL_DEFAULT, "clear list\r\n");
+        __LOG(LOG_SRC_APP, LOG_LEVEL_DEFAULT, "Clear list\r\n");
     }
 }
 
 void provisioning_with_uuid(uint8_t * device)
 {
-    __LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, "start provisioning for ", device, NRF_MESH_UUID_SIZE);
+    __LOG_XB(LOG_SRC_APP, LOG_LEVEL_INFO, "Start provisioning for ", device, NRF_MESH_UUID_SIZE);
     start_provisioning(device);
     m_prov_state = PROV_STATE_PROV;
 }
@@ -207,7 +207,7 @@ static void do_config_step(void)
         /* Bind the On/Off server to the application key: */
         case PROV_STATE_CONFIG_APPKEY_BIND_THINGY:
         {
-            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Binding appkey to the Simple On/Off model\n");
+            __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Binding appkey to the Simple Thingy model\n");
             access_model_id_t model_id;
             model_id.company_id = ACCESS_COMPANY_ID_NORDIC;
             model_id.model_id = SIMPLE_THINGY_SERVER_MODEL_ID;
@@ -216,7 +216,7 @@ static void do_config_step(void)
             break;
         }
 
-        /* Configure the publication parameters for the On/Off server: */
+        /* Configure the publication parameters for the Simply Thingy server: */
         case PROV_STATE_CONFIG_PUBLICATION_HEALTH:
         {
             config_publication_state_t pubstate = {0};
@@ -238,7 +238,7 @@ static void do_config_step(void)
             break;
         }
 
-        /* Configure the publication parameters for the On/Off server: */
+        /* Configure the publication parameters for the Simple Thingy server: */
         case PROV_STATE_CONFIG_PUBLICATION_THINGY:
         {
             config_publication_state_t pubstate = {0};
@@ -284,11 +284,11 @@ static void do_config_step(void)
 
 
 
-uint8_t nearby_dev_buffer_push(uint8_t * beacon_info)
+uint8_t nearby_dev_buffer_push(const uint8_t * beacon_info)
 {
     uint8_t i;
     bool new_device = true;
-    __LOG_XB(LOG_SRC_APP, LOG_LEVEL_DEFAULT, "got device:", beacon_info, NRF_MESH_UUID_SIZE);
+    __LOG_XB(LOG_SRC_APP, LOG_LEVEL_DEFAULT, "Got device:", beacon_info, NRF_MESH_UUID_SIZE);
     for(i = 0; i < NEARBY_DEV_BUFFER_SIZE; i++){
         if(strncmp(nearby_dev_info[i], beacon_info, NRF_MESH_UUID_SIZE) == 0)
         {
@@ -304,11 +304,11 @@ uint8_t nearby_dev_buffer_push(uint8_t * beacon_info)
 
 
     for(i = 0; i < cur_index; i++){
-        __LOG_XB(LOG_SRC_APP, LOG_LEVEL_DEFAULT, "got device:", nearby_dev_info[i], NRF_MESH_UUID_SIZE);
+        __LOG_XB(LOG_SRC_APP, LOG_LEVEL_DEFAULT, "Got device:", nearby_dev_info[i], NRF_MESH_UUID_SIZE);
     }
 
 }
-static void prov_evt_handler(nrf_mesh_prov_evt_t * p_evt)
+static void prov_evt_handler(const nrf_mesh_prov_evt_t * p_evt)
 {
     switch (p_evt->type)
     {
@@ -352,6 +352,7 @@ static void prov_evt_handler(nrf_mesh_prov_evt_t * p_evt)
         {
             uint32_t status = nrf_mesh_prov_oob_use(p_evt->params.oob_caps_received.p_context,
                                                     NRF_MESH_PROV_OOB_METHOD_STATIC,
+                                                    0,
                                                     NRF_MESH_KEY_SIZE);
             if (status != NRF_SUCCESS)
             {

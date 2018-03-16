@@ -92,7 +92,6 @@
 
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
-#define  NRF_LOG_MODULE_NAME "main          "
 
 #define DEAD_BEEF   0xDEADBEEF          /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
 #define SCHED_MAX_EVENT_DATA_SIZE   MAX(APP_TIMER_SCHED_EVENT_DATA_SIZE, BLE_STACK_HANDLER_SCHED_EVT_SIZE) /**< Maximum size of scheduler events. */
@@ -732,7 +731,7 @@ int main(void)
 {
     uint32_t err_code;
     err_code = NRF_LOG_INIT(NULL);
-    NRF_LOG_INFO(NRF_LOG_COLOR_CODE_GREEN"===== Thingy started! =====  \r\n");
+    NRF_LOG_INFO(NRF_LOG_COLOR_CODE_GREEN"===== Thingy mesh demo bridge started! =====  \r\n");
 
     nrf_gpio_cfg_input(BUTTON, NRF_GPIO_PIN_PULLUP);
     APP_ERROR_CHECK(err_code);

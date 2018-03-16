@@ -52,7 +52,7 @@
 
 
 /** Simple OnOff Client model ID. */
-#define SIMPLE_THINGY_CLIENT_MODEL_ID (0x01)
+#define SIMPLE_THINGY_CLIENT_MODEL_ID (0x0003)
 
 
 /** Forward declaration. */
