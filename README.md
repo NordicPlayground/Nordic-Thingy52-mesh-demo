@@ -153,6 +153,7 @@ If the user want Thingy node 2 send sensor report every 2 seconds, the packets w
 
 |ID MSB  | ID LSB | Service | Temperature MSB     | Temperature LSB     | Humidity     |
 | ------ | ------ | ------- | ---------           | -------             | ---------    |
+
 The temperature is consisted with two parts, which using Celisus:
 -  MSB: the integer part, which is a int8_t integer
 - LSB: the decimal part, which is a uint8_t integer
@@ -162,7 +163,8 @@ The humidify shows in percentage, which is a uint8_t integer
 If the TX notification on the bridge got "0x00 0x02 0x06 0x19 0x11 0x1a", which means
 |ID MSB  | ID LSB | Service | Temperature MSB     | Temperature LSB     | Humidity     |
 | ------ | ------ | ------- | ---------           | -------             | ---------    |
-| 0x00   | 0x02   | 0x06    | 0x19                | 0x11                | 0x1a    |
+| 0x00   | 0x02   | 0x06    | 0x19                | 0x11                | 0x1a         |
+
 - this sensor feedback comes from the node address 0x0002    
 - 0x19 is the integer part of temperature, it is 25 in this example 
 - 0x11 is the decimal part of temperature, which is 0.17 in this example
