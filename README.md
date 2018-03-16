@@ -18,7 +18,7 @@ In the Thingy mesh demo, a experimental simple Thingy model is introduced. Which
 - Nordic Thingy:52 SDK v2.1.0
     - [https://github.com/NordicSemiconductor/Nordic-Thingy52-FW](https://github.com/NordicSemiconductor/Nordic-Thingy52-FW "Github link")
 - Nordic nRF5 SDK for Mesh v1.0.1
-    - [https://www.nordicsemi.com/eng/Products/Bluetooth-low-energy/nRF5-SDK-for-Mesh](https://www.nordicsemi.com/eng/nordic/Products/nRF5-SDK-for-Mesh)
+    - [https://www.nordicsemi.com/eng/Products/Bluetooth-low-energy/nRF5-SDK-for-Mesh](https://www.nordicsemi.com/eng/Products/Bluetooth-low-energy/nRF5-SDK-for-Mesh "nRF-Mesh-SDK")
 - Segger Embedded Studio 
 
 ### Running the demo
@@ -151,13 +151,35 @@ typedef enum
 If the user only send service without command packets, the Thingy node will send sesnor report every 1 second.
 If the user want Thingy node 2 send sensor report every 2 seconds, the packets will be:
 
+|ID MSB  | ID LSB | Service | Temperature MSB     | Temperature LSB     | Humidity     |
+| ------ | ------ | ------- | ---------           | -------             | ---------    |
+The temperature is consisted with two parts, which using Celisus:
+-  MSB: the integer part, which is a int8_t integer
+- LSB: the decimal part, which is a uint8_t integer
+
+The humidify shows in percentage, which is a uint8_t integer
+
+If the TX notification on the bridge got "0x00 0x02 0x06 0x19 0x11 0x1a", which means
+|ID MSB  | ID LSB | Service | Temperature MSB     | Temperature LSB     | Humidity     |
+| ------ | ------ | ------- | ---------           | -------             | ---------    |
+| 0x00   | 0x02   | 0x06    | 0x19                | 0x11                | 0x1a    |
+- this sensor feedback comes from the node address 0x0002    
+- 0x19 is the integer part of temperature, it is 25 in this example 
+- 0x11 is the decimal part of temperature, which is 0.17 in this example
+-- So the temperature is 25.17 Celsius degree
+- 0x1a is humidity percentage, which is 26% in the example
+
+
+##### 4. Read back the sensor information
+To read back the sensor information from a node, first you have to configure the sensor feedback rate for the node.
+After that, please turn on the TX notification on the bridge, the sensor feedback information will show on the TX notification characteristic.
+The data format shows like follow:
+
 |ID MSB  | ID LSB | Service | Parameter |
 | ------ | ------ | ------- | --------- |
 | 0x00   | 0x02   | 0x02    | 0x02      |
 
-
-
-##### 4. Set the Thingy LED status
+##### 5. Set the Thingy LED status
 For LED control, the command is very similar to the Thingy UI LED setting, the first byte of the commands is mode, and follow with the detail setting:
 - Mode (uint8_t)
     - 0x00 = off
@@ -212,8 +234,8 @@ If the user want to set red breath light with intensity 50, delay 200ms to Thing
 | ------ | ------ | ------- | ------------------------ |
 | 0x00   | 0x01   | 0x03    | 0x02 0x01 0x32 0xC8 0x00 |
 
-##### 5. Add/delete a specific Thingy node to/from a custom group
-The setting in the current firmmware configs every nodes subscribe the LED status from the group address 0xCAFE, which is binded with client 0x000A. User can add specific nodes into another group which address is 0xCAFF and the binded client is 0x000B.
+##### 6. Add/delete a specific Thingy node to/from a custom group
+The setting in the current firmmware configures every nodes subscribe the LED status from the group address 0xCAFE, which is binded with client 0x000A. User can add specific nodes into another group which address is 0xCAFF and the binded client is 0x000B.
 
 To add node 4 into this custom group, the packets will be
 
