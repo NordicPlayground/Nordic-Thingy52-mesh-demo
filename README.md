@@ -36,7 +36,7 @@ To compile the demo firmware and run the demo, please follow the steps:
 9. For using nRFMesh APP to run the demo, please add node 0x0000 ~ 0x0009 in the list, and you can control the specific node or all the nodes in the mesh network.
 10. The button on the bridge can toggle the LED on every nodes 
 11. If you don't have nRFMesh APP, you can use nRFConnect to send the commmand packets to run the demo, please check the "protocol section" for more information.
-12. We provide macros for nRFconnect on Android, which is located in nRFConnect_macros in the respository. To import the macro, please check the guide video in [https://www.youtube.com/watch?v=rWOws3uhN6o](here "importing macro").
+12. We provide macros for nRFconnect on Android, which is located in nRFConnect_macros in the respository. To import the macro, please check the guide video in [here](https://www.youtube.com/watch?v=rWOws3uhN6o "importing macro").
 13. To erase the provisioning information stored in the bridge or nodes, please turn off the Thingy and press the button on the top of the Thingy when turn on the power.
 
 ### Known issues
