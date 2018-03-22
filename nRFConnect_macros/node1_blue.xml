@@ -1,0 +1,8 @@
+<macro name="0000 Blue" icon="PLAY">
+   <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+      <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+         <property name="WRITE" requirement="MANDATORY"/>
+      </assert-characteristic>
+   </assert-service>
+   <write description="Write 0x000003010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000003010000FF" type="WRITE_REQUEST"/>
+</macro>

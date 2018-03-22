@@ -32,11 +32,12 @@ To compile the demo firmware and run the demo, please follow the steps:
 5. Open the workspace under "Thingy_node\pca20020_s132\ses", compile and download the firmware in to multiple Thingy devices which will play the role as "Nodes".
 6. Open the workspace under "Thingy_bridge\pca20020_s132\ses", compile and download the firmware in to the Thingy device which will play the role as "Bridge".
 7. When the Thingy bridge is turned on, it will blink in red breath light, and start to do provisioning to the nearby unprovisoned Thingy nodes automatically. You can disable the auto-provisioning function by undefine the macro "AUTO_PROV" in the code, or check the detail of the protocol to send a command to turn it off.
-7. When the unprovisioned Thingy node is turned on, it will blink in green breathe light, after it be provisioned, it will turn to constant light blue.
-8. For using nRFMesh APP to run the demo, please add node 0x0000 ~ 0x0009 in the list, and you can control the specific node or all the nodes in the mesh network.
-9. The button on the bridge can toggle the LED on every nodes 
-10. If you don't have nRFMesh APP, you can use nRFConnect to send the commmand packets to run the demo, please check the "protocol section" for more information.
-11. To erase the provisioning information stored in the bridge or nodes, please turn off the Thingy and press the button on the top of the Thingy when turn on the power.
+8. When the unprovisioned Thingy node is turned on, it will blink in green breathe light, after it be provisioned, it will turn to constant light blue.
+9. For using nRFMesh APP to run the demo, please add node 0x0000 ~ 0x0009 in the list, and you can control the specific node or all the nodes in the mesh network.
+10. The button on the bridge can toggle the LED on every nodes 
+11. If you don't have nRFMesh APP, you can use nRFConnect to send the commmand packets to run the demo, please check the "protocol section" for more information.
+12. We provide macros for nRFconnect on Android, which is located in nRFConnect_macros in the respository. To import the macro, please check the guide video in [https://www.youtube.com/watch?v=rWOws3uhN6o](here "importing macro").
+13. To erase the provisioning information stored in the bridge or nodes, please turn off the Thingy and press the button on the top of the Thingy when turn on the power.
 
 ### Known issues
 This is a draft version of the demo example, there are some issue waiting for fixed:

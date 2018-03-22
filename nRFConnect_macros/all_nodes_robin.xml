@@ -1,0 +1,67 @@
+<macro name="LED running" icon="PLAY">
+   <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+      <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+         <property name="WRITE" requirement="MANDATORY"/>
+      </assert-characteristic>
+   </assert-service>
+   <write description="Write 0xFFFF0300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0300" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0301FF0000 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301FF0000" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF030100FF00 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF030100FF00" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF03010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF03010000FF" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0301FFFF00 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301FFFF00" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0301FF00FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301FF00FF" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF030100FFFF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF030100FFFF" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0301FF00FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301FF00FF" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0301FF5020 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301FF5020" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0301105020 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301105020" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0301105090 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301105090" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0301FF2030 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301FF2030" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0300" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0x00000301FF0000 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00000301FF0000" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0x0001030100FF00 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0001030100FF00" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0x000203010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000203010000FF" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0x00030301FFFF00 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00030301FFFF00" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0x00040301FF00FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00040301FF00FF" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0x0005030100FFFF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0005030100FFFF" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0x00060301FF00FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00060301FF00FF" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0x000703015F50FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000703015F50FF" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0x000803010F000F to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000803010F000F" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0x000903010F005F to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000903010F005F" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0301FF00FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301FF00FF" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF030100FFFF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF030100FFFF" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0301FF00FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301FF00FF" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0301FF5020 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301FF5020" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0301105020 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301105020" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0301105090 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301105090" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+   <write description="Write 0xFFFF0301FF2030 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301FF2030" type="WRITE_REQUEST"/>
+   <sleep description="Sleep 1000 ms" timeout="1000"/>
+</macro>
