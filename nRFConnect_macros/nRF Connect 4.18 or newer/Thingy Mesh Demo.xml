@@ -1,0 +1,660 @@
+<group name="Thingy Mesh Demo">
+   <group name="Nodes">
+      <group name="Node 0">
+         <macro name="Node 0 LED RED" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00000301FF0000 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00000301FF0000" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 0 LED GREEN" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x0000030100FF00 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0000030100FF00" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 0 LED BLUE" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000003010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000003010000FF" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 0 LED OFF" icon="LED_OFF">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00000300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00000300" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Add Node 0 to Custom Group" icon="PLUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000004 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000004" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Remove Node 0 from Custom Group" icon="MINUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000005 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000005" type="WRITE_REQUEST"/>
+         </macro>
+      </group>
+      <group name="Node 1">
+         <macro name="Node 1 LED RED" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00010301FF0000 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00010301FF0000" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 1 LED GREEN" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x0001030100FF00 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0001030100FF00" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 1 LED BLUE" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000103010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000103010000FF" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 1 LED OFF" icon="LED_OFF">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00010300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00010300" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Add Node 1 to Custom Group" icon="PLUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000104 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000104" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Remove Node 1 from Custom Group" icon="MINUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000105 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000105" type="WRITE_REQUEST"/>
+         </macro>
+      </group>
+      <group name="Node 2">
+         <macro name="Node 2 LED RED" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00020301FF0000 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00020301FF0000" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 2 LED GREEN" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x0002030100FF00 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0002030100FF00" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 2 LED BLUE" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000203010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000203010000FF" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 2 LED OFF" icon="LED_OFF">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00020300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00020300" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Add Node 2 to Custom Group" icon="PLUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000204 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000204" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Remove Node 2 from Custom Group" icon="MINUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000205 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000205" type="WRITE_REQUEST"/>
+         </macro>
+      </group>
+      <group name="Node 3">
+         <macro name="Node 3 LED RED" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00030301FF0000 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00030301FF0000" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 3 LED GREEN" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x0003030100FF00 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0003030100FF00" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 3 LED BLUE" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000303010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000303010000FF" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 3 LED OFF" icon="LED_OFF">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00030300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00030300" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Add Node 3 to Custom Group" icon="PLUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000304 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000304" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Remove Node 3 from Custom Group" icon="MINUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000305 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000305" type="WRITE_REQUEST"/>
+         </macro>
+      </group>
+      <group name="Node 4">
+         <macro name="Node 4 LED RED" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00040301FF0000 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00040301FF0000" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 4 LED GREEN" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x0004030100FF00 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0004030100FF00" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 4 LED BLUE" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000403010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000403010000FF" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 4 LED OFF" icon="LED_OFF">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00040300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00040300" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Add Node 4 to Custom Group" icon="PLUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000404 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000404" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Remove Node 4 from Custom Group" icon="MINUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000405 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000405" type="WRITE_REQUEST"/>
+         </macro>
+      </group>
+      <group name="Node 5">
+         <macro name="Node 5 LED RED" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00050301FF0000 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00050301FF0000" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 5 LED GREEN" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x0005030100FF00 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0005030100FF00" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 5 LED BLUE" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000503010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000503010000FF" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 5 LED OFF" icon="LED_OFF">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00050300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00050300" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Add Node 5 to Custom Group" icon="PLUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000504 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000504" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Remove Node 5 from Custom Group" icon="MINUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000505 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000505" type="WRITE_REQUEST"/>
+         </macro>
+      </group>
+      <group name="Node 6">
+         <macro name="Node 6 LED RED" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00060301FF0000 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00060301FF0000" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 6 LED GREEN" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x0006030100FF00 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0006030100FF00" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 6 LED BLUE" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000603010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000603010000FF" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 6 LED OFF" icon="LED_OFF">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00060300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00060300" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Add Node 6 to Custom Group" icon="PLUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000604 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000604" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Remove Node 6 from Custom Group" icon="MINUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000605 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000605" type="WRITE_REQUEST"/>
+         </macro>
+      </group>
+      <group name="Node 7">
+         <macro name="Node 7 LED RED" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00070301FF0000 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00070301FF0000" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 7 LED GREEN" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x0007030100FF00 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0007030100FF00" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 7 LED BLUE" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000703010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000703010000FF" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 7 LED OFF" icon="LED_OFF">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00070300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00070300" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Add Node 7 to Custom Group" icon="PLUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000704 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000704" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Remove Node 7 from Custom Group" icon="MINUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000705 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000705" type="WRITE_REQUEST"/>
+         </macro>
+      </group>
+      <group name="Node 8">
+         <macro name="Node 8 LED RED" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00080301FF0000 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00080301FF0000" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 8 LED GREEN" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x0008030100FF00 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0008030100FF00" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 8 LED BLUE" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000803010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000803010000FF" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 8 LED OFF" icon="LED_OFF">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00080300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00080300" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Add Node 8 to Custom Group" icon="PLUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000804 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000804" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Remove Node 8 from Custom Group" icon="MINUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000805 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000805" type="WRITE_REQUEST"/>
+         </macro>
+      </group>
+      <group name="Node 9">
+         <macro name="Node 9 LED RED" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00090301FF0000 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00090301FF0000" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 9 LED GREEN" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x0009030100FF00 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0009030100FF00" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 9 LED BLUE" icon="LED_ON">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000903010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000903010000FF" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Node 9 LED OFF" icon="LED_OFF">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x00090300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="00090300" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Add Node 9 to Custom Group" icon="PLUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000904 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000904" type="WRITE_REQUEST"/>
+         </macro>
+         <macro name="Remove Node 9 from Custom Group" icon="MINUS">
+            <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+               <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+                  <property name="WRITE" requirement="MANDATORY"/>
+               </assert-characteristic>
+            </assert-service>
+            <write description="Write 0x000905 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000905" type="WRITE_REQUEST"/>
+         </macro>
+      </group>
+   </group>
+   <group name="Groups">
+      <macro name="Default Group LIGHT BLUE" icon="HOME">
+         <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+            <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+               <property name="WRITE" requirement="MANDATORY"/>
+            </assert-characteristic>
+         </assert-service>
+         <write description="Write 0x000A030100FFFF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000A030100FFFF" type="WRITE_REQUEST"/>
+      </macro>
+      <macro name="Blink Default Group PURPLE" icon="HOME">
+         <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+            <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+               <property name="WRITE" requirement="MANDATORY"/>
+            </assert-characteristic>
+         </assert-service>
+         <write description="Write 0x000A03020564C800 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000A03020564C800" type="WRITE_REQUEST"/>
+      </macro>
+      <macro name="Default Group OFF" icon="HOME">
+         <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+            <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+               <property name="WRITE" requirement="MANDATORY"/>
+            </assert-characteristic>
+         </assert-service>
+         <write description="Write 0x000A0300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000A0300" type="WRITE_REQUEST"/>
+      </macro>
+      <macro name="Custom Group RED" icon="STAR">
+         <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+            <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+               <property name="WRITE" requirement="MANDATORY"/>
+            </assert-characteristic>
+         </assert-service>
+         <write description="Write 0x000B0301FF0000 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000B0301FF0000" type="WRITE_REQUEST"/>
+      </macro>
+      <macro name="Blink Custom Group GREEN" icon="STAR">
+         <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+            <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+               <property name="WRITE" requirement="MANDATORY"/>
+            </assert-characteristic>
+         </assert-service>
+         <write description="Write 0x000B03020264C800 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000B03020264C800" type="WRITE_REQUEST"/>
+      </macro>
+      <macro name="Custom Group OFF" icon="STAR">
+         <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+            <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+               <property name="WRITE" requirement="MANDATORY"/>
+            </assert-characteristic>
+         </assert-service>
+         <write description="Write 0x000B0300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000B0300" type="WRITE_REQUEST"/>
+      </macro>
+   </group>
+   <group name="All nodes">
+      <macro name="Blink all RED" icon="FLASH">
+         <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+            <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+               <property name="WRITE" requirement="MANDATORY"/>
+            </assert-characteristic>
+         </assert-service>
+         <write description="Write 0xFFFF0301FF0000 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0301FF0000" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 150 ms" timeout="150"/>
+         <write description="Write 0xFFFF030100 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF030100" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 150 ms" timeout="150"/>
+      </macro>
+      <macro name="Blink all YELLOW" icon="LED_ON">
+         <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+            <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+               <property name="WRITE" requirement="MANDATORY"/>
+            </assert-characteristic>
+         </assert-service>
+         <write description="Write 0xFFFF03030364 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF03030364" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 3000 ms" timeout="3000"/>
+      </macro>
+      <macro name="All OFF" icon="LED_OFF">
+         <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+            <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+               <property name="WRITE" requirement="MANDATORY"/>
+            </assert-characteristic>
+         </assert-service>
+         <write description="Write 0xFFFF0300 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="FFFF0300" type="WRITE_REQUEST"/>
+      </macro>
+   </group>
+   <group name="Animations">
+      <macro name="Nordic blue" icon="NORDIC">
+         <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+            <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+               <property name="WRITE" requirement="MANDATORY"/>
+            </assert-characteristic>
+         </assert-service>
+         <write description="Write 0x000003010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000003010000FF" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x000103010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000103010000FF" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x0000030100 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0000030100" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x000203010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000203010000FF" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x0001030100 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0001030100" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x000303010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000303010000FF" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x0002030100 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0002030100" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x000403010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000403010000FF" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x0003030100 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0003030100" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x000503010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000503010000FF" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x0004030100 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0004030100" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x000603010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000603010000FF" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x0005030100 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0005030100" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x000703010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000703010000FF" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x0006030100 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0006030100" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x000803010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000803010000FF" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x0007030100 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0007030100" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x000903010000FF to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000903010000FF" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x0008030100 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0008030100" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <sleep description="Sleep 100 ms" timeout="100"/>
+         <write description="Write 0x0009030100 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="0009030100" type="WRITE_REQUEST"/>
+      </macro>
+      <macro name="Night rider" icon="MINUS">
+         <assert-service description="Ensure Nordic UART Service" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e">
+            <assert-characteristic description="Ensure RX Characteristic" uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e">
+               <property name="WRITE" requirement="MANDATORY"/>
+            </assert-characteristic>
+         </assert-service>
+         <write description="Write 0x000003020164C800 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000003020164C800" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 300 ms" timeout="300"/>
+         <write description="Write 0x000103020164C800 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000103020164C800" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 300 ms" timeout="300"/>
+         <write description="Write 0x000203020164C800 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000203020164C800" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 300 ms" timeout="300"/>
+         <write description="Write 0x000303020164C800 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000303020164C800" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 300 ms" timeout="300"/>
+         <write description="Write 0x000403020164C800 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000403020164C800" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 300 ms" timeout="300"/>
+         <write description="Write 0x000503020164C800 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000503020164C800" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 300 ms" timeout="300"/>
+         <write description="Write 0x000603020164C800 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000603020164C800" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 300 ms" timeout="300"/>
+         <write description="Write 0x000703020164C800 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000703020164C800" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 300 ms" timeout="300"/>
+         <write description="Write 0x000803020164C800 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000803020164C800" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 300 ms" timeout="300"/>
+         <write description="Write 0x000903020164C800 to RX Characteristic" characteristic-uuid="6e400002-b5a3-f393-e0a9-e50e24dcca9e" service-uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" value="000903020164C800" type="WRITE_REQUEST"/>
+         <sleep description="Sleep 300 ms" timeout="300"/>
+      </macro>
+   </group>
+</group>
